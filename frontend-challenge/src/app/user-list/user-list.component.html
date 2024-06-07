@@ -1,0 +1,28 @@
+<app-navbar 
+    (searchByIdEvent)="searchUserById($event)"
+    (showPageEvent)="onShowPage($event)">
+</app-navbar>
+
+<div class="user-list-container">
+    <ng-container *ngIf="!loading && !error; else loadingOrInvalid">
+        <div class="grid">
+            <div class="user-card" *ngFor="let user of users" [routerLink]="['/users', user.id]">
+                <img [src]="user.avatar" alt="{{ user.first_name }} {{ user.last_name }}">
+                <p>{{ user.first_name }} {{ user.last_name }}</p>
+                <p>ID: {{ user.id }}</p>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #loadingOrInvalid>
+        <div *ngIf="loading">
+            <div class="loading-container">
+                <img 
+                    src="https://usagif.com/wp-content/uploads/loading-50.gif"
+                    width="120vmin">
+            </div>
+        </div>
+        <div *ngIf="!loading && users.length === 0">
+            <p>ID invalid</p>
+        </div>
+    </ng-template>
+</div>

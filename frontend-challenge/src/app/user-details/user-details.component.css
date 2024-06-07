@@ -1,0 +1,30 @@
+.user-details-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vmin;
+}
+
+.user-details-card {
+    background-color: rgb(170, 170, 170);
+    width: 40vmin;
+    padding: 2vmin;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2vmin;
+}
+
+.user-avatar img {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.user-info p {
+    margin: 10px 0;
+}
+  
+.loading-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}

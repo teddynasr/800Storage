@@ -1,0 +1,22 @@
+<a routerLink="/users">
+    <button class="btn btn-secondary m-4">Go Back</button>
+</a>
+<div class="user-details-container" *ngIf="user">
+<div class="user-details-card">
+    <div class="user-avatar">
+        <img [src]="user.avatar" alt="User Avatar">
+    </div>
+    <div class="user-info">
+        <p><strong>ID:</strong> {{ user.id }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>First Name:</strong> {{ user.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+    </div>
+</div>
+</div>
+  
+<div *ngIf="loading" class="loading-container">
+    <img 
+        src="https://usagif.com/wp-content/uploads/loading-50.gif"
+        width="120vmin">
+</div>
